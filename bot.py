@@ -1,5 +1,6 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
+import os
 
 BOT_TOKEN = "8279598676:AAFwYVtwI2O4F4713fqMyhw1JXXxkpiw_18"
 
@@ -58,7 +59,9 @@ def main():
     
     # Start bot
     print("🤖 Bot is running...")
-    print(f"📝 Bot Username: @{application.bot.username}")
+    bot_info = application.bot
+    print(f"📝 Bot Username: @{bot_info.username}")
+    print(f"🆔 Bot ID: {bot_info.id}")
     application.run_polling()
 
 if __name__ == '__main__':
